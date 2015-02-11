@@ -60,7 +60,14 @@ public class FlightBookingSystem extends javax.swing.JFrame {
         setTitle("Flight Booking System");
         setAutoRequestFocus(false);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setModalExclusionType(null);
+        setName("mainFrame"); // NOI18N
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jDepartTextField.setText("DEPART");
         jDepartTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -250,6 +257,11 @@ public class FlightBookingSystem extends javax.swing.JFrame {
         });
         jRoundTripButton.setVisible(true);
     }//GEN-LAST:event_cancelFlightMenuMouseClicked
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+      //    Frame1.setExtendedState( Frame1.getExtendedState()|JFrame.MAXIMIZED_BOTH );  
+      // Frame1
+    }//GEN-LAST:event_formWindowOpened
     
     // class DatePicker
     
@@ -341,6 +353,8 @@ public class FlightBookingSystem extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
+        
+    
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -367,6 +381,8 @@ public class FlightBookingSystem extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new FlightBookingSystem().setVisible(true);
+                //FlightBookingSystem.setExtendedState( f.getExtendedState()|JFrame.MAXIMIZED_BOTH 
+                
             }
         });
     }
